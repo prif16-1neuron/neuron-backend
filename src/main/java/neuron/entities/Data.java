@@ -1,5 +1,8 @@
 package neuron.entities;
 
+/**
+ * data format
+ */
 public class Data {
     private final String x1;
     private final String x2;

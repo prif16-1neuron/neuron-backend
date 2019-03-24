@@ -6,8 +6,16 @@ import neuron.entities.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+/**
+ * Calculation class
+ */
 
+public class Calculator {
+    /**
+     *
+     * @param consumedData, List of data
+     * @return calculated data
+     */
     public List<CalculatedData> calculate(List<Data> consumedData) {
         List<CalculatedData> calculatedData = new ArrayList<>();
         for (Data consumed : consumedData) {
@@ -17,6 +25,11 @@ public class Calculator {
         return calculatedData;
     }
 
+    /**
+     *
+     * @param data, data for calculations
+     * @return calculated T value
+     */
     private int calculateT(Data data) {
         double x1 = convertOfString(data.getX1());
         double x2 = convertOfString(data.getX2());
