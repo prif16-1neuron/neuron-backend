@@ -24,7 +24,7 @@ public class MainController {
      * @return calculated result
      */
 
-    @GetMapping(path = "/calculate", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/calculate", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Data> getCalculations(@RequestBody DataRequest body) {
        List<Data> data = body.data.stream()
                .map(d -> new Data(d.getX1(), d.getX2(), d.getW1(), d.getW2()))
