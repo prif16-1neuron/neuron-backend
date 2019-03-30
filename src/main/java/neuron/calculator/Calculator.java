@@ -31,6 +31,7 @@ public class Calculator {
      * @return calculated T value
      */
     private int calculateT(Data data) {
+        double w0 = convertOfString(data.getW0());
         double x1 = convertOfString(data.getX1());
         double x2 = convertOfString(data.getX2());
         double w1 = convertOfString(data.getW1());
@@ -38,7 +39,7 @@ public class Calculator {
 
         double sum = x1 * w1 + x2 * w2;
 
-        if(sum >= 0) {
+        if(sum >= w0) {
             return 1;
         }
         return 0;

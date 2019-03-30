@@ -29,7 +29,7 @@ public class MainController {
     @PostMapping(path = "/calculate", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Data> getCalculations(@RequestBody DataRequest body) {
        List<Data> data = body.data.stream()
-               .map(d -> new Data(d.getX1(), d.getX2(), d.getW1(), d.getW2()))
+               .map(d -> new Data(d.getW0(), d.getX1(), d.getX2(), d.getW1(), d.getW2()))
                .collect(Collectors.toList());
        List<CalculatedData> response = new Calculator().calculate(data);
        return new ResponseEntity(response, HttpStatus.OK);
