@@ -24,8 +24,7 @@ public class MainController {
      * @return calculated result
      */
 
-    // TODO: 19.3.24 delete this later
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://prif16-1neuron.github.io/neuron/")
     @PostMapping(path = "/calculate", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Data> getCalculations(@RequestBody DataRequest body) {
        List<Data> data = body.data.stream()
