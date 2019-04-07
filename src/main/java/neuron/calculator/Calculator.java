@@ -1,6 +1,7 @@
 package neuron.calculator;
 
 import neuron.entities.AutoData;
+import neuron.entities.CalculatedAutoData;
 import neuron.entities.CalculatedData;
 import neuron.entities.Data;
 
@@ -26,10 +27,10 @@ public class Calculator {
         return calculatedData;
     }
 
-    public List<CalculatedData> autoCalculate(List<AutoData> consumedData){
-        List<CalculatedData> calculatedData = new ArrayList<>();
+    public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData){
+        List<CalculatedAutoData> calculatedData = new ArrayList<>();
         for(AutoData consumed: consumedData) {
-            CalculatedData data = new CalculatedData(String.valueOf(calculateAutoT(consumed)),"0.31");
+            CalculatedAutoData data = new CalculatedAutoData(String.valueOf(calculateAutoT(consumed)),"0.31");
             calculatedData.add(data);
         }
         return calculatedData;
