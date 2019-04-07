@@ -1,8 +1,10 @@
 package neuron.controller;
 
 import neuron.calculator.Calculator;
+import neuron.entities.AutoData;
 import neuron.entities.CalculatedData;
 import neuron.entities.Data;
+import neuron.web.AutoDataRequest;
 import neuron.web.DataRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +34,15 @@ public class MainController {
                .collect(Collectors.toList());
        List<CalculatedData> response = new Calculator().calculate(data);
        return new ResponseEntity(response, HttpStatus.OK);
+    }
+
+    @PostMapping(path = "/calculate/auto", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<AutoData> getAutoCalculations(@RequestBody AutoDataRequest body){
+        List<AutoData> data = body.data.stream()
+                .map(d -> new AutoData(d.getW0(), d.getX1(), d.getX2(), d.getW1(), d.getW2(), d.getW3(), d.getX3()))
+                .collect(Collectors.toList());
+        List<CalculatedData> response = new Calculator().autoCalculate(data);
+        return new ResponseEntity(response, HttpStatus.OK);
     }
 
 }
