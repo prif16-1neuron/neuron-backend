@@ -5,6 +5,7 @@ import neuron.entities.AutoData;
 import neuron.entities.CalculatedAutoData;
 import neuron.entities.CalculatedData;
 import neuron.entities.Data;
+import neuron.entities.Extra;
 import neuron.web.AutoDataRequest;
 import neuron.web.DataRequest;
 import org.springframework.http.HttpStatus;
@@ -42,7 +43,8 @@ public class MainController {
         List<AutoData> data = body.data.stream()
                 .map(d -> new AutoData(d.getW0(), d.getX1(), d.getX2(), d.getW1(), d.getW2(), d.getW3(), d.getX3()))
                 .collect(Collectors.toList());
-        List<CalculatedAutoData> response = new Calculator().autoCalculate(data);
+        Extra extra = new Extra(body.layer, body.iterations, body.rate);
+        List<CalculatedAutoData> response = new Calculator().autoCalculate(data, extra);
         return new ResponseEntity(response, HttpStatus.OK);
     }
 

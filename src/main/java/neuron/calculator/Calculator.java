@@ -4,6 +4,7 @@ import neuron.entities.AutoData;
 import neuron.entities.CalculatedAutoData;
 import neuron.entities.CalculatedData;
 import neuron.entities.Data;
+import neuron.entities.Extra;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Calculator {
         return calculatedData;
     }
 
-    public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData){
+    public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
         for(AutoData consumed: consumedData) {
             CalculatedAutoData data = new CalculatedAutoData(String.valueOf(calculateAutoT(consumed)),"0.31");
