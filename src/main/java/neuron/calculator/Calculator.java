@@ -31,8 +31,8 @@ public class Calculator {
     public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
         for(AutoData consumed: consumedData) {
-
-            CalculatedAutoData data = new CalculatedAutoData(String.valueOf(calculateAutoT(consumed,extra)),"");
+            double autoY = calculateAutoY(consumed,extra);
+            CalculatedAutoData data = new CalculatedAutoData(String.valueOf(autoY),String.valueOf((int)Math.round(autoY)));
             calculatedData.add(data);
         }
         return calculatedData;
@@ -80,7 +80,7 @@ public class Calculator {
         return Double.valueOf(value);
     }
 
-    private Double calculateAutoT(AutoData data, Extra extra){
+    private Double calculateAutoY(AutoData data, Extra extra){
         double output;
         double error;
         double localError;
