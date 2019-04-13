@@ -6,7 +6,7 @@ public class CalculatedAutoData {
 
         private final String y;
 
-        public CalculatedAutoData(String t,String y){
+        public CalculatedAutoData(String y,String t){
             this.t = t;
             this.y = y;
         }
