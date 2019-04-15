@@ -33,19 +33,15 @@ public class Calculator {
 
     public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
-        w[0] = consumedData.get(0).getW0();
-        w[1] = consumedData.get(1).getW0();;
-        w[2] = consumedData.get(2).getW0();;
-        w[3] = consumedData.get(3).getW0();;
         for(AutoData consumed: consumedData) {
             CalculatedAutoData data = calculateAutoY(consumed, extra);
             calculatedData.add(data);
         }
         for (CalculatedAutoData calculatedDatum : calculatedData) {
-            calculatedDatum.setW0(String.valueOf(w[0]));
-            calculatedDatum.setW1(String.valueOf(w[1]));
-            calculatedDatum.setW2(String.valueOf(w[2]));
-            calculatedDatum.setW3(String.valueOf(w[3]));
+            calculatedDatum.setW0(String.valueOf(w[1]));
+            calculatedDatum.setW1(String.valueOf(w[2]));
+            calculatedDatum.setW2(String.valueOf(w[3]));
+            calculatedDatum.setW3(String.valueOf(w[0]));
         }
         return calculatedData;
     }
@@ -72,7 +68,7 @@ public class Calculator {
 
         switch (type) {
             case "Linear":
-                return getLinear(w0, sum);
+                return getTheta(sum);
             case "Sigmoid":
                 return 1 / (1 + Math.pow(Math.E, -sum));
             case "Tangent":
@@ -83,6 +79,13 @@ public class Calculator {
 
     private double getLinear(double w0, double sum) {
         if (sum >= w0) {
+            return 1;
+        }
+        return 0;
+    }
+
+    private double getTheta(double sum) {
+        if (sum >= 0) {
             return 1;
         }
         return 0;
@@ -99,6 +102,10 @@ public class Calculator {
         double rate = extra.getRate();
         double[] outputs = {data.getX1(), data.getX2(), data.getX3()};
         ArrayList<Double> y = new ArrayList<>();
+        w[0] = data.getW1();
+        w[1] = data.getW2();
+        w[2] = data.getW3();
+        w[3] = data.getW0();
 
         int it = 0;
 
