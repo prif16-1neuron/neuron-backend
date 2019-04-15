@@ -63,14 +63,14 @@ public class Calculator {
         return getLinear(w0, sum);
     }
 
-    private double calculateAutoTSum(double[] w, double w0, double x1, double x2, double x3, String type){
+    private double calculateAutoTSum(double x1, double x2, double x3, String type){
         double sum = x1 * w[0] + x2 * w[1] + x3 * w[2] + w[3];
 
         switch (type) {
             case "Linear":
                 return getTheta(sum);
             case "Sigmoid":
-                return 1 / (1 + Math.pow(Math.E, -sum));
+                return 1.0 / (1.0 + Math.exp(-sum));
             case "Tangent":
                 return Math.tanh(sum);
         }
@@ -113,7 +113,7 @@ public class Calculator {
             it++;
             error = data.getY();
             for(int i = 0; i < outputs.length; i++) {
-                output = calculateAutoTSum(w, data.getW0(), data.getX1(), data.getX2(), data.getX3(), extra.getLayer());
+                output = calculateAutoTSum(data.getX1(), data.getX2(), data.getX3(), extra.getLayer());
                 localError = outputs[i] - output;
                 w[0]+= rate * localError * data.getX1();
                 w[1]+= rate * localError * data.getX2();
