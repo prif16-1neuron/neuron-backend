@@ -6,13 +6,13 @@ public class CalculatedAutoData {
 
     private final String y;
 
-    private final String w0;
+    private String w0;
 
-    private final String w1;
+    private String w1;
 
-    private final String w2;
+    private String w2;
 
-    private final String w3;
+    private String w3;
 
     public CalculatedAutoData(String w0, String w1, String w2, String w3, String y, String t) {
         this.t = t;
@@ -21,6 +21,11 @@ public class CalculatedAutoData {
         this.w1 = w1;
         this.w2 = w2;
         this.w3 = w3;
+    }
+
+    public CalculatedAutoData(String t, String y) {
+        this.t = t;
+        this.y = y;
     }
 
     public String getT() {
@@ -45,5 +50,21 @@ public class CalculatedAutoData {
 
     public String getW3() {
         return w3;
+    }
+
+    public void setW0(String w0) {
+        this.w0 = w0;
+    }
+
+    public void setW1(String w1) {
+        this.w1 = w1;
+    }
+
+    public void setW2(String w2) {
+        this.w2 = w2;
+    }
+
+    public void setW3(String w3) {
+        this.w3 = w3;
     }
 }

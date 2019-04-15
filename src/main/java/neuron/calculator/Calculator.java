@@ -14,6 +14,9 @@ import java.util.List;
  */
 
 public class Calculator {
+
+    double[] w = new double[4];
+
     /**
      *
      * @param consumedData, List of data
@@ -30,9 +33,19 @@ public class Calculator {
 
     public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
+        w[0] = consumedData.get(0).getW0();
+        w[1] = consumedData.get(1).getW0();;
+        w[2] = consumedData.get(2).getW0();;
+        w[3] = consumedData.get(3).getW0();;
         for(AutoData consumed: consumedData) {
             CalculatedAutoData data = calculateAutoY(consumed, extra);
             calculatedData.add(data);
+        }
+        for (CalculatedAutoData calculatedDatum : calculatedData) {
+            calculatedDatum.setW0(String.valueOf(w[0]));
+            calculatedDatum.setW1(String.valueOf(w[1]));
+            calculatedDatum.setW2(String.valueOf(w[2]));
+            calculatedDatum.setW3(String.valueOf(w[3]));
         }
         return calculatedData;
     }
@@ -86,11 +99,6 @@ public class Calculator {
         double rate = extra.getRate();
         double[] outputs = {data.getX1(), data.getX2(), data.getX3()};
         ArrayList<Double> y = new ArrayList<>();
-        double[] w = new double[4];
-        w[0] = data.getW0();
-        w[1] = data.getW1();
-        w[2] = data.getW2();
-        w[3] = data.getW3();
 
         int it = 0;
 
@@ -113,11 +121,7 @@ public class Calculator {
         int len = y.size()-1;
         double yRes  = y.get(len);
         return new CalculatedAutoData(
-                String.valueOf(w[0])
-                , String.valueOf(w[1])
-                , String.valueOf(w[2])
-                , String.valueOf(w[3])
-                , String.valueOf(yRes)
+                  String.valueOf(yRes)
                 , String.valueOf((int)Math.round(yRes)));
     }
 }
