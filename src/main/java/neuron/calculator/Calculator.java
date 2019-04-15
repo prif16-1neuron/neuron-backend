@@ -121,7 +121,7 @@ public class Calculator {
         int len = y.size()-1;
         double yRes  = y.get(len);
         return new CalculatedAutoData(
-                  String.valueOf(yRes)
-                , String.valueOf((int)Math.round(yRes)));
+                  String.valueOf((int)Math.round(yRes)),
+                  String.valueOf(yRes));
     }
 }
