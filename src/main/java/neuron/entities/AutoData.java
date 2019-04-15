@@ -8,8 +8,9 @@ public class AutoData {
     private  double w2;
     private  double w3;
     private  double x3;
+    private double y;
 
-    public AutoData(double w0, double x1, double x2, double w1, double w2, double w3, double x3) {
+    public AutoData(double w0, double x1, double x2, double w1, double w2, double w3, double x3, double y) {
         this.w0 = w0;
         this.x1 = x1;
         this.x2 = x2;
@@ -17,6 +18,11 @@ public class AutoData {
         this.w2 = w2;
         this.w3 = w3;
         this.x3 = x3;
+        this.y = y;
+    }
+
+    public double getY() {
+        return y;
     }
 
     public double getW0() {

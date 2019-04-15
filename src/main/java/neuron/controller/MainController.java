@@ -41,7 +41,7 @@ public class MainController {
     @PostMapping(path = "/calculate/auto", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<AutoData> getAutoCalculations(@RequestBody AutoDataRequest body){
         List<AutoData> data = body.data.stream()
-                .map(d -> new AutoData(d.getW0(), d.getX1(), d.getX2(), d.getW1(), d.getW2(), d.getW3(), d.getX3()))
+                .map(d -> new AutoData(d.getW0(), d.getX1(), d.getX2(), d.getW1(), d.getW2(), d.getW3(), d.getX3(), d.getY()))
                 .collect(Collectors.toList());
         Extra extra = new Extra(body.layer, body.iterations, body.rate);
         List<CalculatedAutoData> response = new Calculator().autoCalculate(data, extra);

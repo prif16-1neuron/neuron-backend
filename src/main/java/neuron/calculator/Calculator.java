@@ -111,7 +111,7 @@ public class Calculator {
 
         do {
             it++;
-            error = 0;
+            error = data.getY();
             for(int i = 0; i < outputs.length; i++) {
                 output = calculateAutoTSum(w, data.getW0(), data.getX1(), data.getX2(), data.getX3(), extra.getLayer());
                 localError = outputs[i] - output;
@@ -122,7 +122,7 @@ public class Calculator {
 
                 error += (localError * localError);
             }
-            y.add(Math.sqrt(error / 8));
+            y.add(Math.sqrt(error / outputs.length));
         } while (error != 0 && it <= extra.getIterations());
 
         int len = y.size()-1;
