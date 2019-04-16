@@ -1,5 +1,8 @@
 package neuron.entities;
 
+/**
+ * AutoData entity for requesting from auto endpoint
+ */
 public class AutoData {
     private  double w0;
     private  double x1;

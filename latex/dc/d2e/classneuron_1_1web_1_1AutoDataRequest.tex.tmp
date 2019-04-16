@@ -1,0 +1,37 @@
+\hypertarget{classneuron_1_1web_1_1AutoDataRequest}{}\section{neuron.\+web.\+Auto\+Data\+Request Class Reference}
+\label{classneuron_1_1web_1_1AutoDataRequest}\index{neuron.\+web.\+Auto\+Data\+Request@{neuron.\+web.\+Auto\+Data\+Request}}
+
+
+Request entity.  
+
+
+
+
+Collaboration diagram for neuron.\+web.\+Auto\+Data\+Request\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classneuron_1_1web_1_1AutoDataRequest_ad5febbb9a28bec190cf9bccaff780177}\label{classneuron_1_1web_1_1AutoDataRequest_ad5febbb9a28bec190cf9bccaff780177}} 
+List$<$ \hyperlink{classneuron_1_1entities_1_1AutoData}{Auto\+Data} $>$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classneuron_1_1web_1_1AutoDataRequest_a40b30e48c2937fefc3b99a70f769aee3}\label{classneuron_1_1web_1_1AutoDataRequest_a40b30e48c2937fefc3b99a70f769aee3}} 
+String {\bfseries layer}
+\item 
+\mbox{\Hypertarget{classneuron_1_1web_1_1AutoDataRequest_abfe4076e98c8c6be88997359f7c19eab}\label{classneuron_1_1web_1_1AutoDataRequest_abfe4076e98c8c6be88997359f7c19eab}} 
+int {\bfseries iterations}
+\item 
+\mbox{\Hypertarget{classneuron_1_1web_1_1AutoDataRequest_a5268a4134917564704031ddfe6fa2d65}\label{classneuron_1_1web_1_1AutoDataRequest_a5268a4134917564704031ddfe6fa2d65}} 
+double {\bfseries rate}
+\item 
+\mbox{\Hypertarget{classneuron_1_1web_1_1AutoDataRequest_a81939e662a771d99071eb3b76093465b}\label{classneuron_1_1web_1_1AutoDataRequest_a81939e662a771d99071eb3b76093465b}} 
+String {\bfseries x\+Columns}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Request entity. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/neuron/web/Auto\+Data\+Request.\+java\end{DoxyCompactItemize}

@@ -38,6 +38,11 @@ public class MainController {
        return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     * Api endpoint for auto calculations
+     * @param body
+     * @return
+     */
     @PostMapping(path = "/calculate/auto", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<AutoData> getAutoCalculations(@RequestBody AutoDataRequest body){
         List<AutoData> data = body.data.stream()

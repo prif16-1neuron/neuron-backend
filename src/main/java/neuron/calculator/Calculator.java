@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Calculation class
+ *
+ * Main class, made for calculations
+ * @method calculate
+ * @method autoCalculateList
  */
 
 public class Calculator {
@@ -29,7 +32,9 @@ public class Calculator {
             calculatedData.add(data);
         }
         return calculatedData;
-    }
+    } /*!< Calculate list class */
+
+
 
     public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
@@ -63,6 +68,15 @@ public class Calculator {
         return getLinear(w0, sum);
     }
 
+    /**
+     * function for different function endings
+     * @param x1
+     * @param x2
+     * @param x3
+     * @param type
+     * @return
+     */
+
     private double calculateAutoTSum(double x1, double x2, double x3, String type){
         double sum = x1 * w[0] + x2 * w[1] + x3 * w[2] + w[3];
 
@@ -77,6 +91,10 @@ public class Calculator {
         return 0;
     }
 
+
+    /*!
+    linear neuron activation
+     */
     private double getLinear(double w0, double sum) {
         if (sum >= w0) {
             return 1;
@@ -94,6 +112,13 @@ public class Calculator {
     private double convertOfString(String value) {
         return Double.valueOf(value);
     }
+
+    /**
+     * function for auto calculations
+     * @param data
+     * @param extra
+     * @return
+     */
 
     CalculatedAutoData calculateAutoY(AutoData data, Extra extra){
         double output;
