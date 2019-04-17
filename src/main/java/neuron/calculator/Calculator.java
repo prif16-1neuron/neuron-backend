@@ -103,7 +103,7 @@ public class Calculator {
     }
 
     private double getTheta(double sum) {
-        if (sum >= 0) {
+        if (sum >= w[3]) {
             return 1;
         }
         return 0;
