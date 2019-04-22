@@ -40,11 +40,11 @@ public class Calculator {
         List<CalculatedAutoData> calculatedData = new ArrayList<>();
         for(AutoData consumed: consumedData) {
             CalculatedAutoData data = calculateAutoY(consumed, extra);
-            int score = Integer.valueOf(data.getY());
-            if(score>1){
-                score = 1;
-            }
-            data.setY(String.valueOf(score));
+//            int score = Integer.valueOf(data.getY());
+//            if(score>1){
+//                score = 1;
+//            }
+//            data.setY(String.valueOf(score));
             calculatedData.add(data);
         }
         for (CalculatedAutoData calculatedDatum : calculatedData) {
@@ -157,11 +157,12 @@ public class Calculator {
 
         int len = y.size()-1;
         double yRes  = y.get(len);
-        if(yRes> 1.0){
-            yRes = 1.0d;
+        int res = (int)Math.round(yRes);
+        if(res > 1){
+            res = 1;
         }
         return new CalculatedAutoData(
-                  String.valueOf((int)Math.round(yRes)),
+                  String.valueOf(res),
                   String.valueOf(yRes));
     }
 }
