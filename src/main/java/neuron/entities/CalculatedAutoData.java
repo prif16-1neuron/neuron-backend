@@ -4,7 +4,7 @@ public class CalculatedAutoData {
 
     private final String t;
 
-    private final String y;
+    private  String y;
 
     private String w0;
 
@@ -23,9 +23,14 @@ public class CalculatedAutoData {
         this.w3 = w3;
     }
 
+    public void setY(String y) {
+        this.y = y;
+    }
+
     public CalculatedAutoData(String t, String y) {
         this.t = t;
-        this.y = y;
+        this.y
+                = y;
     }
 
     public String getT() {
