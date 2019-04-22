@@ -158,7 +158,8 @@ public class Calculator {
         int len = y.size()-1;
         double yRes  = y.get(len);
         int res = (int)Math.round(yRes);
-        if(res > 1){
+        if(res> 1.0 || yRes > 1){
+            yRes = 1.0d;
             res = 1;
         }
         return new CalculatedAutoData(
