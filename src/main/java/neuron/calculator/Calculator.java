@@ -152,8 +152,12 @@ public class Calculator {
 
         int len = y.size()-1;
         double yRes  = y.get(len);
+        int score = (int)Math.round(yRes);
+        if(score>1){
+            score = 1;
+        }
         return new CalculatedAutoData(
-                  String.valueOf((int)Math.round(yRes)),
+                  String.valueOf(score),
                   String.valueOf(yRes));
     }
 }
