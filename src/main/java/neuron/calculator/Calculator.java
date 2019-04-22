@@ -157,6 +157,9 @@ public class Calculator {
 
         int len = y.size()-1;
         double yRes  = y.get(len);
+        if(yRes> 1.0){
+            yRes = 1.0d;
+        }
         return new CalculatedAutoData(
                   String.valueOf((int)Math.round(yRes)),
                   String.valueOf(yRes));
