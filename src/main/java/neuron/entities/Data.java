@@ -9,6 +9,7 @@ public class Data {
     private final String x2;
     private final String w1;
     private final String w2;
+    private String t;
 
     public Data(String w0, String x1, String x2, String w1, String w2) {
         this.x1 = x1;

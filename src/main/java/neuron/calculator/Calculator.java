@@ -29,6 +29,10 @@ public class Calculator {
         List<CalculatedData> calculatedData = new ArrayList<>();
         for (Data consumed : consumedData) {
             CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)));
+            int x1 = Integer.valueOf(consumed.getX1());
+            int x2 = Integer.valueOf(consumed.getX1());
+            int res = x1 ^ x2;
+            data.setT(String.valueOf(res));
             calculatedData.add(data);
         }
         return calculatedData;
