@@ -28,12 +28,15 @@ public class Calculator {
     public List<CalculatedData> calculate(List<Data> consumedData) {
         List<CalculatedData> calculatedData = new ArrayList<>();
         for (Data consumed : consumedData) {
-            CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)));
+            CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)), getCalculatedY(consumed));
             calculatedData.add(data);
         }
         return calculatedData;
     } /*!< Calculate list class */
 
+    private double getCalculatedY(Data data){
+        return Double.valueOf(data.getX1()) * Double.valueOf(data.getW1()) + Double.valueOf(data.getX2()) * Double.valueOf(data.getW2()) + Double.valueOf(data.getW0());
+    }
 
 
     public List<CalculatedAutoData> autoCalculate(List<AutoData> consumedData, Extra extra){
@@ -63,7 +66,7 @@ public class Calculator {
      */
     private int calculateT(Data data) {
         int x1 = Integer.valueOf(data.getX1());
-        int x2 = Integer.valueOf(data.getX1());
+        int x2 = Integer.valueOf(data.getX2());
         return x1 ^ x2;
     }
 

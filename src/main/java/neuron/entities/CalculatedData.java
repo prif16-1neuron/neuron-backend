@@ -6,8 +6,9 @@ public class CalculatedData {
 
     private double y;
 
-    public CalculatedData(String t) {
+    public CalculatedData(String t, double y) {
         this.t = t;
+        this.y = y;
     }
 
     public String getT() {
