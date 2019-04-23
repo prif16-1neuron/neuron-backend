@@ -160,10 +160,17 @@ public class Calculator {
         int res = (int)Math.round(yRes);
         if(res> 1.0 || yRes > 1){
             yRes = 1.0d;
-            res = 1;
         }
+
+        int x1 = (int)data.getX1();
+        int x2 = (int)data.getX2();
+        int x3 = (int)data.getX3();
+
+        res = x1 ^ x2 ^ x3;
+
         return new CalculatedAutoData(
                   String.valueOf(res),
                   String.valueOf(yRes));
     }
+
 }
