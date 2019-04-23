@@ -29,10 +29,6 @@ public class Calculator {
         List<CalculatedData> calculatedData = new ArrayList<>();
         for (Data consumed : consumedData) {
             CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)));
-            int x1 = Integer.valueOf(consumed.getX1());
-            int x2 = Integer.valueOf(consumed.getX1());
-            int res = x1 ^ x2;
-            data.setT(String.valueOf(res));
             calculatedData.add(data);
         }
         return calculatedData;
@@ -65,16 +61,10 @@ public class Calculator {
      * @param data, data for calculations
      * @return calculated T value
      */
-    private double calculateT(Data data) {
-        double w0 = convertOfString(data.getW0());
-        double x1 = convertOfString(data.getX1());
-        double x2 = convertOfString(data.getX2());
-        double w1 = convertOfString(data.getW1());
-        double w2 = convertOfString(data.getW2());
-
-        double sum = x1 * w1 + x2 * w2;
-
-        return getLinear(w0, sum);
+    private int calculateT(Data data) {
+        int x1 = Integer.valueOf(data.getX1());
+        int x2 = Integer.valueOf(data.getX1());
+        return x1 ^ x2;
     }
 
     /**

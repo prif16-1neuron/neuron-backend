@@ -2,7 +2,9 @@ package neuron.entities;
 
 public class CalculatedData {
 
-   private  String t;
+    private  String t;
+
+    private double y;
 
     public CalculatedData(String t) {
         this.t = t;
@@ -14,5 +16,13 @@ public class CalculatedData {
 
     public void setT(String t) {
         this.t = t;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 }
