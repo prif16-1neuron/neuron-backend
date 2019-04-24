@@ -28,15 +28,15 @@ public class Calculator {
     public List<CalculatedData> calculate(List<Data> consumedData) {
         List<CalculatedData> calculatedData = new ArrayList<>();
         for (Data consumed : consumedData) {
-            CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)), getCalculatedY(consumed));
+            CalculatedData data = new CalculatedData(String.valueOf(calculateT(consumed)), getCalculatedY(consumed, Double.valueOf(consumed.getW0())));
             calculatedData.add(data);
         }
         return calculatedData;
     } /*!< Calculate list class */
 
-    private double getCalculatedY(Data data){
+    private double getCalculatedY(Data data, double w0){
         double sum = Double.valueOf(data.getX1()) * Double.valueOf(data.getW1()) + Double.valueOf(data.getX2()) * Double.valueOf(data.getW2()) + Double.valueOf(data.getW0());
-        if(sum > 1){
+        if(sum > w0){
             return 1;
         }
         else return 0;
