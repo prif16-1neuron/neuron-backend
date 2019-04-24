@@ -36,7 +36,13 @@ public class Calculator {
 
     private double getCalculatedY(Data data){
         double sum = Double.valueOf(data.getX1()) * Double.valueOf(data.getW1()) + Double.valueOf(data.getX2()) * Double.valueOf(data.getW2()) + Double.valueOf(data.getW0());
-        return getLinear(Double.valueOf(data.getW0()), sum);
+        if(sum > 1){
+            return 1;
+        }
+        if(sum < -1){
+            return -1;
+        }
+        else return 0;
     }
 
 
