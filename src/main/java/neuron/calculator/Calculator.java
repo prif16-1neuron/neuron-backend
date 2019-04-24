@@ -35,7 +35,8 @@ public class Calculator {
     } /*!< Calculate list class */
 
     private double getCalculatedY(Data data){
-        return Double.valueOf(data.getX1()) * Double.valueOf(data.getW1()) + Double.valueOf(data.getX2()) * Double.valueOf(data.getW2()) + Double.valueOf(data.getW0());
+        double sum = Double.valueOf(data.getX1()) * Double.valueOf(data.getW1()) + Double.valueOf(data.getX2()) * Double.valueOf(data.getW2()) + Double.valueOf(data.getW0());
+        return getLinear(Double.valueOf(data.getW0()), sum);
     }
 
 
